@@ -25,5 +25,5 @@ class PyEngineRenderer:
         for _, surface, pos in sorted(self.draw_queue, key=lambda x: x[0]):
             self.display.DISPLAY.blit(surface, pos)
 
-        self.window.update_display()
+        self.display.update_display()
         self.draw_queue.clear()

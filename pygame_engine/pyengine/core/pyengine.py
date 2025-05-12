@@ -18,6 +18,7 @@ class PyEngine:
         self.running = False
 
         self.display = PyEngineDisplay()
+        self.renderer = PyEngineRenderer(self.display)
 
         self.scene = None
         
@@ -46,7 +47,8 @@ class PyEngine:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
-            
+
+            self.renderer.render()
             self.display.update_display()
 
 
